@@ -29,7 +29,10 @@ export const characterCard = createElement('div', {
           innerText: 'Last known location:',
           className: 'characterSubheader',
         }),
-        createElement('p', { innerText: 'Hamster in Butt World' }),
+        createElement('p', {
+          innerText: 'Hamster in Butt World',
+          className: 'characterSubheaderDescription',
+        }),
         createElement('h4', {
           innerText: 'First seen in:',
           className: 'characterSubheader',
