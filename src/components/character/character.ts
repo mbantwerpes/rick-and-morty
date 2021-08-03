@@ -31,13 +31,16 @@ export const characterCard = createElement('div', {
         }),
         createElement('p', {
           innerText: 'Hamster in Butt World',
-          className: 'characterSubheaderDescription',
+          className: 'characterSubheaderDescriptionSpacer',
         }),
         createElement('h4', {
           innerText: 'First seen in:',
           className: 'characterSubheader',
         }),
-        createElement('p', { innerText: 'Rixty Minutes' }),
+        createElement('p', {
+          innerText: 'Rixty Minutes',
+          className: 'characterSubheaderDescription',
+        }),
       ],
     }),
   ],

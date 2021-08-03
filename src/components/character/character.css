@@ -44,6 +44,11 @@
   height: 10px;
 }
 
-.characterSubheaderDescription {
+.characterSubheaderDescriptionSpacer {
   margin-bottom: 1.6rem;
+}
+
+.characterSubheaderDescription {
+  font-size: 1.2rem;
+  font-weight: 300;
 }
