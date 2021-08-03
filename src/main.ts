@@ -14,6 +14,7 @@ const mainElement = createElement('main', {
             createElement('h1', { innerText: 'Rick and Morty' }),
             createElement('h2', { innerText: 'Lorem ipsum dolor sit amet' }),
             createElement('input', { placeholder: 'Search...' }),
+            characterCard(),
           ],
         }),
       ],
@@ -23,5 +24,4 @@ const mainElement = createElement('main', {
 
 if (app !== null) {
   app.append(mainElement);
-  app.append(characterCard);
 }
