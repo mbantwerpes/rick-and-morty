@@ -6,6 +6,7 @@ export const characterCard = createElement('div', {
   childElements: [
     createElement('img', {
       src: 'https://rickandmortyapi.com/api/character/avatar/153.jpeg',
+      className: 'characterCardImg',
     }),
     createElement('div', {
       className: 'characterCardContent',
@@ -15,9 +16,13 @@ export const characterCard = createElement('div', {
           className: 'characterCardName',
         }),
         createElement('div', {
+          className: 'characterAliveContainer',
           childElements: [
-            createElement('div', {}),
-            createElement('p', { innerText: 'Alive - animal' }),
+            createElement('div', { className: 'characterAliveIndicator' }),
+            createElement('p', {
+              innerText: 'Alive - animal',
+              className: 'characterAliveDescription',
+            }),
           ],
         }),
         createElement('h4', {
