@@ -8,3 +8,17 @@
   padding: 1rem;
   display: grid;
 }
+
+.characterCardName {
+  padding: 0;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.characterSubheader {
+  padding: 0;
+  margin: 0;
+  font-weight: 100;
+  font-size: 1.2rem;
+  color: rgb(161, 159, 159);
+}

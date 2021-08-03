@@ -10,16 +10,25 @@ export const characterCard = createElement('div', {
     createElement('div', {
       className: 'characterCardContent',
       childElements: [
-        createElement('h3', { innerText: 'Hamster in Butt' }),
+        createElement('h3', {
+          innerText: 'Hamster in Butt',
+          className: 'characterCardName',
+        }),
         createElement('div', {
           childElements: [
             createElement('div', {}),
             createElement('p', { innerText: 'Alive - animal' }),
           ],
         }),
-        createElement('h4', { innerText: 'Last known location:' }),
+        createElement('h4', {
+          innerText: 'Last known location:',
+          className: 'characterSubheader',
+        }),
         createElement('p', { innerText: 'Hamster in Butt World' }),
-        createElement('h4', { innerText: 'First seen in:' }),
+        createElement('h4', {
+          innerText: 'First seen in:',
+          className: 'characterSubheader',
+        }),
         createElement('p', { innerText: 'Rixty Minutes' }),
       ],
     }),
