@@ -4,6 +4,14 @@ import { createCharacterCard } from './components/character/character';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
+const charArr = await fetch('https://rickandmortyapi.com/api/character/?page=2')
+  .then((response) => response.json())
+  .then((data) => data.results);
+
+const charNodes = charArr.map((char: any) => {
+  return createCharacterCard(char);
+});
+
 const mainElement = createElement('main', {
   childElements: [
     createElement('body', {
@@ -16,12 +24,7 @@ const mainElement = createElement('main', {
             createElement('input', { placeholder: 'Search...' }),
             createElement('div', {
               className: 'characterContainer',
-              childElements: [
-                createCharacterCard(),
-                createCharacterCard(),
-                createCharacterCard(),
-                createCharacterCard(),
-              ],
+              childElements: charNodes,
             }),
           ],
         }),

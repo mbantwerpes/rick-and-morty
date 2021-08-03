@@ -1,27 +1,35 @@
 import './character.css';
 import { createElement } from '../../utils/createElement';
 
-export function createCharacterCard(): HTMLElement {
+export function createCharacterCard(char: any): HTMLElement {
   return createElement('div', {
     className: 'characterCard',
     childElements: [
       createElement('img', {
-        src: 'https://rickandmortyapi.com/api/character/avatar/153.jpeg',
+        src: char.image,
         className: 'characterCardImg',
       }),
       createElement('div', {
         className: 'characterCardContent',
         childElements: [
           createElement('h3', {
-            innerText: 'Hamster in Butt',
+            innerText: char.name,
             className: 'characterCardName',
           }),
           createElement('div', {
             className: 'characterAliveContainer',
             childElements: [
-              createElement('div', { className: 'characterAliveIndicator' }),
+              createElement('div', {
+                className: `${
+                  char.status === 'Alive'
+                    ? 'characterAliveIndicator'
+                    : char.status === 'Dead'
+                    ? 'characterDeadIndicator'
+                    : 'characterUnknownIndicator'
+                }`,
+              }),
               createElement('p', {
-                innerText: 'Alive - animal',
+                innerText: `${char.status} - ${char.species}`,
                 className: 'characterAliveDescription',
               }),
             ],
@@ -31,7 +39,7 @@ export function createCharacterCard(): HTMLElement {
             className: 'characterSubheader',
           }),
           createElement('p', {
-            innerText: 'Hamster in Butt World',
+            innerText: char.location.name,
             className: 'characterSubheaderDescriptionSpacer',
           }),
           createElement('h4', {
@@ -39,7 +47,7 @@ export function createCharacterCard(): HTMLElement {
             className: 'characterSubheader',
           }),
           createElement('p', {
-            innerText: 'Rixty Minutes',
+            innerText: char.origin.name,
             className: 'characterSubheaderDescription',
           }),
         ],

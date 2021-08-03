@@ -48,6 +48,20 @@
   height: 10px;
 }
 
+.characterDeadIndicator {
+  background-color: rgb(255, 0, 0);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.characterUnknownIndicator {
+  background-color: rgb(150, 150, 150);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
 .characterSubheaderDescriptionSpacer {
   margin-bottom: 1.6rem;
 }
