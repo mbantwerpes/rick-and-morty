@@ -14,7 +14,15 @@ const mainElement = createElement('main', {
             createElement('h1', { innerText: 'Rick and Morty' }),
             createElement('h2', { innerText: 'Lorem ipsum dolor sit amet' }),
             createElement('input', { placeholder: 'Search...' }),
-            createCharacterCard(),
+            createElement('div', {
+              className: 'characterContainer',
+              childElements: [
+                createCharacterCard(),
+                createCharacterCard(),
+                createCharacterCard(),
+                createCharacterCard(),
+              ],
+            }),
           ],
         }),
       ],
