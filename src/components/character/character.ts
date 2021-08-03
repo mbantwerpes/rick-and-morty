@@ -8,6 +8,7 @@ export const characterCard = createElement('div', {
       src: 'https://rickandmortyapi.com/api/character/avatar/153.jpeg',
     }),
     createElement('div', {
+      className: 'characterCardContent',
       childElements: [
         createElement('h3', { innerText: 'Hamster in Butt' }),
         createElement('div', {

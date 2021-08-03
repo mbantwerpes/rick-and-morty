@@ -1,19 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   height: 100%;
-  background-color: rgb(245, 245, 245);
+  background-color: black;
 }
 
 img {
+  display: block;
   width: 100%;
 }
 
 .container {
   display: grid;
-}
-
-.card {
-  display: grid;
-  padding: 1rem;
-  background-color: white;
-  box-shadow: 1px 1px 1px gray;
+  gap: 2rem;
 }
