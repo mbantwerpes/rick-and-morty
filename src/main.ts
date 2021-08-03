@@ -1,6 +1,6 @@
 import './style.css';
 import { createElement } from './utils/createElement';
-import { characterCard } from './components/character/character';
+import { createCharacterCard } from './components/character/character';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
@@ -14,7 +14,7 @@ const mainElement = createElement('main', {
             createElement('h1', { innerText: 'Rick and Morty' }),
             createElement('h2', { innerText: 'Lorem ipsum dolor sit amet' }),
             createElement('input', { placeholder: 'Search...' }),
-            characterCard(),
+            createCharacterCard(),
           ],
         }),
       ],
