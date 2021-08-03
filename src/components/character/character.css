@@ -4,20 +4,24 @@
 }
 
 .characterCard {
+  display: flex;
+  flex-direction: column;
   background-color: #343538;
   border-radius: 1rem;
   color: white;
+}
+
+.characterCardImg {
+  object-fit: cover;
+  object-position: center;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .characterCardContent {
   padding: 1rem;
   display: grid;
   gap: 0.4rem;
-}
-
-.characterCardImg {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
 }
 
 .characterCardName {
@@ -51,4 +55,23 @@
 .characterSubheaderDescription {
   font-size: 1.2rem;
   font-weight: 300;
+}
+
+@media only screen and (min-width: 600px) {
+  .characterCard {
+    flex-direction: row;
+    max-height: 340px;
+    max-width: 650px;
+  }
+
+  .characterCardImg {
+    width: 40%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 1rem;
+  }
+
+  .characterCardContent {
+    width: 60%;
+  }
 }
