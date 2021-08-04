@@ -1,7 +1,8 @@
 import './character.css';
 import { createElement } from '../../utils/createElement';
+import { Character } from '../../types';
 
-export function createCharacterCard(char: any): HTMLElement {
+export function createCharacterCard(char: Character): HTMLElement {
   return createElement('div', {
     className: 'characterCard',
     childElements: [
@@ -39,7 +40,7 @@ export function createCharacterCard(char: any): HTMLElement {
             className: 'characterSubheader',
           }),
           createElement('p', {
-            innerText: char.location.name,
+            innerText: char.location,
             className: 'characterSubheaderDescriptionSpacer',
           }),
           createElement('h4', {
@@ -47,7 +48,7 @@ export function createCharacterCard(char: any): HTMLElement {
             className: 'characterSubheader',
           }),
           createElement('p', {
-            innerText: char.origin.name,
+            innerText: char.origin,
             className: 'characterSubheaderDescription',
           }),
         ],
