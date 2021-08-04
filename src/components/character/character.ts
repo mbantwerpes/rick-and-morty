@@ -2,19 +2,26 @@ import './character.css';
 import { createElement } from '../../utils/createElement';
 import { Character } from '../../types';
 
-export function createCharacterCard(char: Character): HTMLElement {
+export function createCharacterCard({
+  image,
+  name,
+  status,
+  species,
+  location,
+  origin,
+}: Character): HTMLElement {
   return createElement('div', {
     className: 'characterCard',
     childElements: [
       createElement('img', {
-        src: char.image,
+        src: image,
         className: 'characterCardImg',
       }),
       createElement('div', {
         className: 'characterCardContent',
         childElements: [
           createElement('h3', {
-            innerText: char.name,
+            innerText: name,
             className: 'characterCardName',
           }),
           createElement('div', {
@@ -22,15 +29,15 @@ export function createCharacterCard(char: Character): HTMLElement {
             childElements: [
               createElement('div', {
                 className: `${
-                  char.status === 'Alive'
+                  status === 'Alive'
                     ? 'characterAliveIndicator'
-                    : char.status === 'Dead'
+                    : status === 'Dead'
                     ? 'characterDeadIndicator'
                     : 'characterUnknownIndicator'
                 }`,
               }),
               createElement('p', {
-                innerText: `${char.status} - ${char.species}`,
+                innerText: `${status} - ${species}`,
                 className: 'characterAliveDescription',
               }),
             ],
@@ -40,7 +47,7 @@ export function createCharacterCard(char: Character): HTMLElement {
             className: 'characterSubheader',
           }),
           createElement('p', {
-            innerText: char.location,
+            innerText: location,
             className: 'characterSubheaderDescriptionSpacer',
           }),
           createElement('h4', {
@@ -48,7 +55,7 @@ export function createCharacterCard(char: Character): HTMLElement {
             className: 'characterSubheader',
           }),
           createElement('p', {
-            innerText: char.origin,
+            innerText: origin,
             className: 'characterSubheaderDescription',
           }),
         ],
