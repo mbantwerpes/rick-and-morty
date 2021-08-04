@@ -1,4 +1,4 @@
-import './style.css';
+import styles from './style.module.css';
 import { createElement } from './utils/createElement';
 import { createCharacterCard } from './components/character/character';
 import { Character } from './types';
@@ -26,13 +26,13 @@ const mainElement = createElement('main', {
     createElement('body', {
       childElements: [
         createElement('main', {
-          className: 'container',
+          className: styles.container,
           childElements: [
             createElement('h1', { innerText: 'Rick and Morty' }),
             createElement('h2', { innerText: 'Lorem ipsum dolor sit amet' }),
             createElement('input', { placeholder: 'Search...' }),
             createElement('div', {
-              className: 'characterContainer',
+              className: styles.characterContainer,
               childElements: charNodes,
             }),
           ],

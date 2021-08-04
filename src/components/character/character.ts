@@ -1,4 +1,4 @@
-import './character.css';
+import styles from './character.module.css';
 import { createElement } from '../../utils/createElement';
 import { Character } from '../../types';
 
@@ -11,52 +11,52 @@ export function createCharacterCard({
   origin,
 }: Character): HTMLElement {
   return createElement('div', {
-    className: 'characterCard',
+    className: styles.characterCard,
     childElements: [
       createElement('img', {
         src: image,
-        className: 'characterCardImg',
+        className: styles.characterCardImg,
       }),
       createElement('div', {
-        className: 'characterCardContent',
+        className: styles.characterCardContent,
         childElements: [
           createElement('h3', {
             innerText: name,
-            className: 'characterCardName',
+            className: styles.characterCardName,
           }),
           createElement('div', {
-            className: 'characterAliveContainer',
+            className: styles.characterAliveContainer,
             childElements: [
               createElement('div', {
                 className: `${
                   status === 'Alive'
-                    ? 'characterAliveIndicator'
+                    ? styles.characterAliveIndicator
                     : status === 'Dead'
-                    ? 'characterDeadIndicator'
-                    : 'characterUnknownIndicator'
+                    ? styles.characterDeadIndicator
+                    : styles.characterUnknownIndicator
                 }`,
               }),
               createElement('p', {
                 innerText: `${status} - ${species}`,
-                className: 'characterAliveDescription',
+                className: styles.characterAliveDescription,
               }),
             ],
           }),
           createElement('h4', {
             innerText: 'Last known location:',
-            className: 'characterSubheader',
+            className: styles.characterSubheader,
           }),
           createElement('p', {
             innerText: location,
-            className: 'characterSubheaderDescriptionSpacer',
+            className: styles.characterSubheaderDescriptionSpacer,
           }),
           createElement('h4', {
             innerText: 'First seen in:',
-            className: 'characterSubheader',
+            className: styles.characterSubheader,
           }),
           createElement('p', {
             innerText: origin,
-            className: 'characterSubheaderDescription',
+            className: styles.characterSubheaderDescription,
           }),
         ],
       }),
