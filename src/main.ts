@@ -17,7 +17,10 @@ const mainElement = createElement('main', {
           childElements: [
             createElement('h1', { innerText: 'Rick and Morty' }),
             createElement('h2', { innerText: 'Lorem ipsum dolor sit amet' }),
-            createElement('input', { placeholder: 'Search...' }),
+            createElement('input', {
+              placeholder: 'Search...',
+              className: 'searchInput',
+            }),
             createElement('div', {
               className: styles.characterContainer,
               childElements: charArr.map((character) =>
