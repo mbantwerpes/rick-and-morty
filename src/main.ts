@@ -8,6 +8,25 @@ const app = document.querySelector<HTMLDivElement>('#app');
 
 const charArr: Character[] = await getCharacters();
 
+const characterContainer = createElement('div', {
+  className: styles.characterContainer,
+  childElements: charArr.map((character) => createCharacterCard(character)),
+});
+
+const searchBar = createElement('input', {
+  placeholder: 'Search...',
+  className: 'searchInput',
+  oninput: async (event) => {
+    characterContainer.innerHTML = '';
+    const searchValue = (<HTMLInputElement>event.target).value;
+    const filteredCharacters = await getCharacters(searchValue);
+    const filteredCharacterNodes = filteredCharacters.map((character) =>
+      createCharacterCard(character)
+    );
+    characterContainer.append(...filteredCharacterNodes);
+  },
+});
+
 const mainElement = createElement('main', {
   childElements: [
     createElement('body', {
@@ -17,16 +36,8 @@ const mainElement = createElement('main', {
           childElements: [
             createElement('h1', { innerText: 'Rick and Morty' }),
             createElement('h2', { innerText: 'Lorem ipsum dolor sit amet' }),
-            createElement('input', {
-              placeholder: 'Search...',
-              className: 'searchInput',
-            }),
-            createElement('div', {
-              className: styles.characterContainer,
-              childElements: charArr.map((character) =>
-                createCharacterCard(character)
-              ),
-            }),
+            searchBar,
+            characterContainer,
           ],
         }),
       ],
